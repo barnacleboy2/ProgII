@@ -1,0 +1,21 @@
+provincias = (
+    "Bocas del Toro", "Coclé", "Colón", "Chiriquí",
+    "Darién", "Herrera", "Los Santos", "Panamá",
+    "Panamá Oeste", "Veraguas"
+)
+
+comarcas = (
+    "Emberá-Wounaan", "Guna Yala",
+    "Ngäbe-Buglé", "Naso Tjër Di"
+)
+
+print("Provincias de Panamá:")
+for p in provincias:
+    print(f"  - {p}")
+
+print("\nComarcas de Panamá:")
+for c in comarcas:
+    print(f"  - {c}")
+
+# Intentar modificar generaría un TypeError
+# provincias[0] = "Otro"  # Error: 'tuple' object does not support item assignment
