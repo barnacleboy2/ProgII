@@ -1,0 +1,7 @@
+thislist = ["apple", "banana", "cherry", "banana", "kiwi"]
+thislist.remove("banana")  # Solo elimina el primero
+print(thislist)
+
+# Eliminar por índice
+thislist.pop(1)
+print(thislist)

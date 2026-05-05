@@ -1,0 +1,3 @@
+thisset = {"apple", "banana", "cherry"}
+thisset.discard("banana")  # No genera error si no existe
+print(thisset)
