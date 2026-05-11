@@ -1,0 +1,10 @@
+texto = "hola mundo, hola python"
+
+# capitalize() - primera letra en mayuscula
+print(texto.capitalize())
+
+# count() - cuantas veces aparece una subcadena
+print(texto.count("hola"))
+
+# find() - posicion donde aparece por primera vez
+print(texto.find("mundo"))

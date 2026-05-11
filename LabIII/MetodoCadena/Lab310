@@ -1,0 +1,12 @@
+texto1 = "HolaMundo"
+texto2 = "PYTHON"
+texto3 = "python"
+
+# isalpha() - True si todos los caracteres son letras
+print(texto1.isalpha())
+
+# isupper() - True si todos estan en mayusculas
+print(texto2.isupper())
+
+# islower() - True si todos estan en minusculas
+print(texto3.islower())
