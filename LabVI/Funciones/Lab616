@@ -1,0 +1,7 @@
+# Lambda: sumar 10
+x = lambda a : a + 10
+print(x(5))
+
+# Lambda: multiplicar dos argumentos
+x = lambda a, b : a * b
+print(x(5, 6))

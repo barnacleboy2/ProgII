@@ -1,0 +1,8 @@
+# Forma 1: con print separado
+print("Ingrese su nombre:")
+nombre = input()
+print(f"Hola {nombre}")
+
+# Forma 2: con prompt en input (una linea menos)
+nombre = input("Ingrese su nombre:")
+print(f"Hola {nombre}")
