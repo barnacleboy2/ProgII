@@ -1,0 +1,27 @@
+def generar_matriz_identidad(n):
+    if n % 2 != 0:
+        return None
+    matriz = [[1 if i == j else 0 for j in range(n)] for i in range(n)]
+    return matriz
+
+def imprimir_matriz(matriz):
+    for fila in matriz:
+        print("\t".join(str(e) for e in fila))
+
+while True:
+    entrada = input("Ingrese un numero PAR para la matriz identidad: ")
+    try:
+        n = int(entrada)
+        if n % 2 != 0:
+            print("El numero debe ser PAR. Intentelo de nuevo.")
+        elif n <= 0:
+            print("El numero debe ser mayor a 0.")
+        else:
+            break
+    except:
+        print("Entrada invalida, ingrese un numero entero.")
+
+matriz = generar_matriz_identidad(n)
+print(f"\nMatriz identidad de orden {n}x{n}:")
+print("-" * (n * 4))
+imprimir_matriz(matriz)

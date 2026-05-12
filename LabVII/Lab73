@@ -1,0 +1,62 @@
+import string
+
+def contar_palabras_unicas(texto):
+    texto_limpio = texto.lower()
+    for signo in string.punctuation:
+        texto_limpio = texto_limpio.replace(signo, "")
+    palabras = texto_limpio.split()
+    palabras_unicas = set(palabras)
+    return len(palabras_unicas)
+
+def palabra_mas_larga(texto):
+    texto_limpio = texto.lower()
+    for signo in string.punctuation:
+        texto_limpio = texto_limpio.replace(signo, "")
+    palabras = texto_limpio.split()
+    if not palabras:
+        return ""
+    return max(palabras, key=len)
+
+def frecuencia_caracteres(texto):
+    texto_sin_espacios = texto.lower().replace(" ", "")
+    texto_solo_letras = ""
+    for c in texto_sin_espacios:
+        if c.isalpha():
+            texto_solo_letras += c
+    total = len(texto_solo_letras)
+    if total == 0:
+        return {}
+    frecuencia = {}
+    for letra in texto_solo_letras:
+        frecuencia[letra] = frecuencia.get(letra, 0) + 1
+    resultado = {}
+    for letra, cantidad in sorted(frecuencia.items()):
+        porcentaje = (cantidad / total) * 100
+        resultado[letra] = (cantidad, porcentaje)
+    return resultado
+
+# Flujo principal
+print("=" * 50)
+print("   ANALIZADOR DE TEXTO")
+print("=" * 50)
+texto = input("\nIngrese el texto a analizar:\n> ")
+
+print("\n" + "=" * 50)
+print("           REPORTE DE ANALISIS")
+print("=" * 50)
+
+unicas = contar_palabras_unicas(texto)
+print(f"\n Palabras unicas encontradas : {unicas}")
+
+larga = palabra_mas_larga(texto)
+print(f" Palabra mas larga           : '{larga}' ({len(larga)} letras)")
+
+print("\n Frecuencia de caracteres:")
+print(f"   {'Letra':<8} {'Cantidad':<10} {'Porcentaje'}")
+print("   " + "-" * 30)
+frecuencias = frecuencia_caracteres(texto)
+for letra, (cantidad, porcentaje) in frecuencias.items():
+    print(f"   {letra:<8} {cantidad:<10} {porcentaje:.2f}%")
+
+print("\n" + "=" * 50)
+print("Analisis completado.")
