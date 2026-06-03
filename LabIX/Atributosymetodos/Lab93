@@ -1,0 +1,13 @@
+class Persona:
+    # Atributo estatico (compartido por todas las instancias)
+    contador = 0
+
+    def __init__(self):
+        Persona.contador += 1  # Se accede con el nombre de la clase
+
+p1 = Persona()
+p2 = Persona()
+p3 = Persona()
+
+print(Persona.contador)   # 3
+print(p1.contador)        # 3 (mismo valor, compartido)

@@ -1,0 +1,15 @@
+from typing import final
+
+@final
+class Base:
+    pass
+
+# Un linter (como MyPy) marcara esto como ERROR:
+class Derivada(Base):
+    pass
+
+# Python lo ejecuta igual, pero MyPy/VS Code mostrara advertencia
+b = Base()
+d = Derivada()
+print("Base creada")
+print("Derivada creada (Python lo permite en runtime)")
