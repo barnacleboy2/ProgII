@@ -1,0 +1,46 @@
+from abc import ABC, abstractmethod
+import math
+
+# Clase abstracta base
+class Figura(ABC):
+    @abstractmethod
+    def calcularArea(self):
+        pass
+
+# Clases derivadas
+class Circulo(Figura):
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcularArea(self):
+        return math.pi * (self.radio ** 2)
+
+class Rectangulo(Figura):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def calcularArea(self):
+        return self.base * self.altura
+
+class Triangulo(Figura):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def calcularArea(self):
+        return (self.base * self.altura) / 2
+
+# Demostración de Polimorfismo
+if __name__ == "__main__":
+    # Lista de figuras mixtas
+    figuras = [
+        Circulo(5),
+        Rectangulo(4, 6),
+        Triangulo(3, 8)
+    ]
+    
+    print("--- Cálculo de áreas usando Polimorfismo ---")
+    for figura in figuras:
+        # Se llama al mismo método sin importar el tipo concreto de objeto
+        print(f"Área de la figura ({type(figura).__name__}): {figura.calcularArea():.2f}")

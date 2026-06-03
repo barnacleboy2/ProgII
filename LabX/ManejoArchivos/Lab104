@@ -1,0 +1,9 @@
+import os
+
+print("--- Eliminación de archivos con validación ---")
+
+if os.path.exists("archivo_demo.txt"):
+    os.remove("archivo_demo.txt")
+    print("El archivo 'archivo_demo.txt' ha sido eliminado con éxito.")
+else:
+    print("The file does not exist")

@@ -1,0 +1,9 @@
+print("--- Lectura línea por línea con readline() ---")
+with open("archivo_demo.txt", "r", encoding="utf-8") as f:
+    print(f.readline().strip())
+    print(f.readline().strip())
+
+print("\n--- Recorriendo todo el archivo con un bucle for ---")
+with open("archivo_demo.txt", "r", encoding="utf-8") as f:
+    for x in f:
+        print(x.strip())

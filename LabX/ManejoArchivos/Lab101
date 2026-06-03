@@ -1,0 +1,16 @@
+# Crear el archivo inicial para la prueba
+with open("archivo_demo.txt", "w", encoding="utf-8") as f:
+    f.write("¡Hola! Bienvenido a archivo_demo.txt\n")
+    f.write("Este archivo es para fines de prueba.\n")
+    f.write("¡Buena suerte!\n")
+
+print("--- Primera Forma: Usando 'with open' (Lectura completa) ---")
+# Primera forma: abre y lee todo el archivo. Se cierra automáticamente.
+with open("archivo_demo.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+print("--- Segunda Forma: Usando 'open' tradicional (Lectura de una línea) ---")
+# Segunda forma: requiere un cierre manual preciso del archivo.
+f = open("archivo_demo.txt", "r", encoding="utf-8")
+print(f.readline())
+f.close()
